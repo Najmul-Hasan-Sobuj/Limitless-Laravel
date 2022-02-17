@@ -20,6 +20,54 @@
     <link href="{{ asset('assets/css/icons/fontawesome/styles.min.css') }}" rel="stylesheet" type="text/css">
     {{-- fontawsome --}}
     <!-- /global stylesheets -->
+
+    <style>
+        .add-new {
+            color: #fff !important;
+        }
+
+        .add-new:hover {
+            opacity: 1 !important;
+        }
+
+        .panel>.dataTables_wrapper .table-bordered,
+        .panel-body>.dataTables_wrapper .table-bordered {
+            border: 1px solid #ddd;
+        }
+
+        .dataTables_length {
+            margin: 20px 0 20px 20px;
+        }
+
+        .dataTables_filter {
+            margin: 20px 0 20px 20px;
+        }
+
+        .dataTables_info {
+            margin-bottom: 20px;
+        }
+
+        .dataTables_paginate {
+            margin: 20px 0 20px 20px;
+        }
+
+        .action-icon {
+            padding: 0px 10px 0 0;
+        }
+
+        .kv-fileinput-upload {
+            display: none;
+        }
+
+        .dataTables_length>label {
+            margin-right: 10px;
+        }
+
+        .dataTables_info {
+            margin-left: 20px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -173,20 +221,30 @@
     </script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/ui/moment/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/pickers/daterangepicker.js') }}"></script>
-
-    {{-- form layout horizontal --}}
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/inputs/touchspin.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/switch.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/form_layouts.js') }}"></script>
-    {{-- form layout horizontal --}}
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/tables/datatables/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/selects/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/validation/validate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/pages/form_validation.js') }}"></script>
 
-    {{-- datatable_styling --}}
-    <script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
-    {{-- These two files should be kept in everyone's last --}}
+
     <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/datatables_basic.js') }}"></script>
-    {{-- These two files should be kept in everyone's last --}}
-    {{-- datatable_styling --}}
+
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/uploaders/fileinput.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/pages/uploader_bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/core/libraries/jquery_ui/interactions.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/selects/selectboxit.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/editable/editable.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/extensions/contextmenu.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/sparkline.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script>
     <!-- /theme JS files -->
+
+
+
 
     <!-- component JS -->
     @stack('script')

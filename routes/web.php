@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', function () {
-    return view('admin.layout.app');
-});
-Route::get('/list', function () {
-    return view('admin.components.list');
-});
-Route::get('/create', function () {
-    return view('admin.components.create');
-});
-Route::get('/update', function () {
-    return view('admin.components.update');
-});
+
+
+// admin routes list start
+Route::resource('student', StudentsController::class);
+// admin routes list end
