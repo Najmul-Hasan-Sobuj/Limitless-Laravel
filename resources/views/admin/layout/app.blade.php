@@ -211,8 +211,6 @@
     <!-- Theme JS files -->
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/d3/d3.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/d3/d3_tooltip.js') }}"></script>
-    {{-- this is not working --}}
-    {{-- <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/switchery.min.js') }}"></script> --}}
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/uniform.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/selects/bootstrap_multiselect.js') }}">
     </script>
@@ -233,16 +231,14 @@
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/editable/editable.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/extensions/contextmenu.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/sparkline.min.js') }}"></script>
-    {{-- this is not working --}}
-    {{-- <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script> --}}
 
     <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/datatables_basic.js') }}"></script>
+    {{-- this is not workable --}}
+    {{-- <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script> --}}
+    {{-- <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/switchery.min.js') }}"></script> --}}
 
     <!-- /theme JS files -->
-
-
-
 
     <!-- component JS -->
     @stack('script')
