@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\Admin\StudentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,11 @@ use App\Http\Controllers\StudentsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('admin');
 });
+Route::get('/admin', function () {
+    return view('admin.layout.app');
+})->name('admin');
 
 
 // admin routes list start

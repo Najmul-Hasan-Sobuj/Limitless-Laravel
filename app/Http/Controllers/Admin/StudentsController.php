@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Student;
+use Illuminate\Support\Facades\Validator;
 
 class StudentsController extends Controller
 {
@@ -13,7 +16,8 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        return view('admin.students.list');
+        $studentData['students'] = Student::get();
+        return view('admin.students.list', $studentData);
     }
 
     /**
@@ -34,7 +38,29 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = Validator::make($request->all(), [
+            'roll'  => 'required',
+            'name'  => 'required',
+            'email' => 'required',
+            'image' => 'required|image|mimes:png,jpg'
+        ]);
+        if ($validation->passes()) {
+            $imgName = '';
+            if ($request->image) {
+
+                $imgName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads'), $imgName);
+            }
+            Student::create([
+                'roll'  => $request->roll,
+                'name'  => $request->name,
+                'email' => $request->email,
+                'image' => $imgName,
+            ]);
+            return redirect()->back();
+        } else {
+            return redirect()->back()->withErrors($validation);
+        }
     }
 
     /**
@@ -56,7 +82,8 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.students.update');
+        $studentData['students'] = Student::find($id);
+        return view('admin.students.update', $studentData);
     }
 
     /**
@@ -68,7 +95,22 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validation = Validator::make($request->all(), [
+            'roll'  => 'required',
+            'name'  => 'required',
+            'email' => 'required',
+        ]);
+        if ($validation->passes()) {
+
+            Student::find($id)->update([
+                'roll'  => $request->roll,
+                'name'  => $request->name,
+                'email' => $request->email,
+            ]);
+            return redirect()->back();
+        } else {
+            return redirect()->back()->withErrors($validation);
+        }
     }
 
     /**
@@ -79,6 +121,6 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Student::find($id)->delete();
     }
 }

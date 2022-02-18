@@ -75,7 +75,8 @@
     <!-- Main navbar -->
     <div class="navbar navbar-inverse">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/images/logo_light.png') }}"
+                    alt=""></a>
 
             <ul class="nav navbar-nav visible-xs-block">
                 <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -91,7 +92,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown dropdown-user">
                     <a class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="assets/images/placeholder.jpg" alt="">
+                        <img src="{{ asset('assets/images/placeholder.jpg') }}" alt="">
                         <span>Victoria</span>
                         <i class="caret"></i>
                     </a>
@@ -125,8 +126,9 @@
                     <div class="sidebar-user">
                         <div class="category-content">
                             <div class="media">
-                                <a href="#" class="media-left"><img src="assets/images/placeholder.jpg"
-                                        class="img-circle img-sm" alt=""></a>
+                                <a href="#" class="media-left"><img
+                                        src="{{ asset('assets/images/placeholder.jpg') }}" class="img-circle img-sm"
+                                        alt=""></a>
                                 <div class="media-body">
                                     <span class="media-heading text-semibold">Victoria Baker</span>
                                     <div class="text-size-mini text-muted">
@@ -155,20 +157,12 @@
                                 <!-- Main -->
                                 <li class="navigation-header"><span>Main</span> <i class="icon-menu"
                                         title="Main pages"></i></li>
-                                <li class="active"><a href="index.html"><i class="icon-home4"></i>
+                                <li class="active"><a href="{{ route('admin') }}"><i
+                                            class="icon-home4"></i>
                                         <span>Dashboard</span></a></li>
-                                {{-- <li>
-                                    <a href="#"><i class="icon-gift"></i> <span>Extra components</span></a>
-                                    <ul>
-                                        <li><a href="extra_affix.html">Affix and Scrollspy</a></li>
-                                        <li><a href="extra_session_timeout.html">Session timeout</a></li>
-                                        <li><a href="extra_idle_timeout.html">Idle timeout</a></li>
-                                        <li><a href="extra_trees.html">Dynamic tree views</a></li>
-                                        <li><a href="extra_context_menu.html">Context menu</a></li>
-                                    </ul>
-                                </li> --}}
                                 <li>
-                                    <a href="#"><i class="icon-users"></i> <span>Students</span></a>
+                                    <a href="{{ route('student.index') }}"><i class="icon-users"></i>
+                                        <span>Students</span></a>
                                 </li>
                                 <!-- /main -->
                             </ul>
@@ -189,7 +183,8 @@
                     @yield('content')
                     <!-- Footer -->
                     <div class="footer text-muted">
-                        &copy; 2022. <a href="#">Najmul Hasan</a> by <a href="#" target="_blank">MD</a>
+                        &copy; {{ date('Y') }}. <a href="#">Developed</a> by <a href="#" target="_blank">MD.Najmul
+                            Hasan</a>
                     </div>
                     <!-- /footer -->
 
@@ -210,12 +205,14 @@
     <script type="text/javascript" src="{{ asset('assets/js/core/libraries/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/core/libraries/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/loaders/blockui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets\js\core\libraries/sweetalert.min.js') }}"></script>
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/d3/d3.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/d3/d3_tooltip.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/switchery.min.js') }}"></script>
+    {{-- this is not working --}}
+    {{-- <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/switchery.min.js') }}"></script> --}}
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/uniform.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/selects/bootstrap_multiselect.js') }}">
     </script>
@@ -229,10 +226,6 @@
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/validation/validate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/form_validation.js') }}"></script>
 
-
-    <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/pages/datatables_basic.js') }}"></script>
-
     <script type="text/javascript" src="{{ asset('assets/js/plugins/uploaders/fileinput.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/uploader_bootstrap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/core/libraries/jquery_ui/interactions.min.js') }}"></script>
@@ -240,7 +233,12 @@
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/editable/editable.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/extensions/contextmenu.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/sparkline.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script>
+    {{-- this is not working --}}
+    {{-- <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script> --}}
+
+    <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/pages/datatables_basic.js') }}"></script>
+
     <!-- /theme JS files -->
 
 
