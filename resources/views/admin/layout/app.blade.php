@@ -72,45 +72,7 @@
 
 <body>
 
-    <!-- Main navbar -->
-    <div class="navbar navbar-inverse">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/images/logo_light.png') }}"
-                    alt=""></a>
-
-            <ul class="nav navbar-nav visible-xs-block">
-                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
-                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
-            </ul>
-        </div>
-
-        <div class="navbar-collapse collapse" id="navbar-mobile">
-            <ul class="nav navbar-nav">
-                <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown dropdown-user">
-                    <a class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ asset('assets/images/placeholder.jpg') }}" alt="">
-                        <span>Victoria</span>
-                        <i class="caret"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
-                        <li><a href="#"><i class="icon-coins"></i> My balance</a></li>
-                        <li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i
-                                    class="icon-comment-discussion"></i> Messages</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
-                        <li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- /main navbar -->
-
+    @include('admin.layout.menu')
 
     <!-- Page container -->
     <div class="page-container">
@@ -119,60 +81,8 @@
         <div class="page-content">
 
             <!-- Main sidebar -->
-            <div class="sidebar sidebar-main">
-                <div class="sidebar-content">
-
-                    <!-- User menu -->
-                    <div class="sidebar-user">
-                        <div class="category-content">
-                            <div class="media">
-                                <a href="#" class="media-left"><img
-                                        src="{{ asset('assets/images/placeholder.jpg') }}" class="img-circle img-sm"
-                                        alt=""></a>
-                                <div class="media-body">
-                                    <span class="media-heading text-semibold">Victoria Baker</span>
-                                    <div class="text-size-mini text-muted">
-                                        <i class="icon-pin text-size-small"></i> &nbsp;Santa Ana, CA
-                                    </div>
-                                </div>
-
-                                <div class="media-right media-middle">
-                                    <ul class="icons-list">
-                                        <li>
-                                            <a href="#"><i class="icon-cog3"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /user menu -->
-
-
-                    <!-- Main navigation -->
-                    <div class="sidebar-category sidebar-category-visible">
-                        <div class="category-content no-padding">
-                            <ul class="navigation navigation-main navigation-accordion">
-
-                                <!-- Main -->
-                                <li class="navigation-header"><span>Main</span> <i class="icon-menu"
-                                        title="Main pages"></i></li>
-                                <li class="active"><a href="{{ route('admin') }}"><i
-                                            class="icon-home4"></i>
-                                        <span>Dashboard</span></a></li>
-                                <li>
-                                    <a href="{{ route('student.index') }}"><i class="icon-users"></i>
-                                        <span>Students</span></a>
-                                </li>
-                                <!-- /main -->
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /main navigation -->
-                </div>
-            </div>
+            @include('admin.layout.sidebar')
             <!-- /main sidebar -->
-
 
             <!-- Main content -->
             <div class="content-wrapper">
@@ -181,11 +91,9 @@
                 <div class="content">
 
                     @yield('content')
+
                     <!-- Footer -->
-                    <div class="footer text-muted">
-                        &copy; {{ date('Y') }}. <a href="#">Developed</a> by <a href="#" target="_blank">MD.Najmul
-                            Hasan</a>
-                    </div>
+                    @include('admin.layout.footer')
                     <!-- /footer -->
 
                 </div>
@@ -233,8 +141,8 @@
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/sparkline.min.js') }}"></script>
 
 
-    {{-- <script type="text/javascript" src="{{ asset('assets\js\plugins\notifications\sweet_alert.min.js') }}"></script> --}}
-    <script type="text/javascript" src="{{ asset('assets\js\pages\extra_sweetalert.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets\js\plugins\notifications\sweet_alert.min.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('assets\js\pages\extra_sweetalert.js') }}"></script> --}}
 
     <script type="text/javascript" src="{{ asset('assets/js/pages/table_responsive.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/tables/footable/footable.min.js') }}"></script>
@@ -242,7 +150,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/datatables_basic.js') }}"></script>
     {{-- this is not workable --}}
-    <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script> --}}
     {{-- <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/switchery.min.js') }}"></script> --}}
 
     <!-- /theme JS files -->
