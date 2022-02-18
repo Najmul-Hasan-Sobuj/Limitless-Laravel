@@ -13,15 +13,14 @@
                 </ul>
             </div>
         </div>
-
-        <table id="studentTable" class="table datatable-basic table-bordered table-striped table-hover">
+        <table id="studentTable" class="table table-togglable datatable-basic table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th>SL</th>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Photo</th>
+                    <th data-toggle="true">SL</th>
+                    <th data-hide="phone">ID</th>
+                    <th data-hide="phone,tablet">Name</th>
+                    <th data-hide="phone,tablet">Email</th>
+                    <th data-hide="phone,tablet">Photo</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -61,8 +60,8 @@
             "iDisplayLength": 10,
             "lengthMenu": [10, 25, 30, 50],
             columnDefs: [{
-                // 'orderable': false,
-                // "targets": 3
+                'orderable': false,
+                "targets": 5
             }]
         });
 

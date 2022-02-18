@@ -232,6 +232,9 @@
     <script type="text/javascript" src="{{ asset('assets/js/plugins/extensions/contextmenu.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/visualization/sparkline.min.js') }}"></script>
 
+    <script type="text/javascript" src="{{ asset('assets/js/pages/table_responsive.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/tables/footable/footable.min.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/datatables_basic.js') }}"></script>
     {{-- this is not workable --}}
