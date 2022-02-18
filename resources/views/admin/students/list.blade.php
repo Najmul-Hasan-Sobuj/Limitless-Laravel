@@ -65,7 +65,6 @@
             }]
         });
 
-        const delBtn = document.querySelector('#trash');
         $('#trash').on("click", function(e) {
             e.preventDefault();
             const delUrl = $(this).attr("href");
