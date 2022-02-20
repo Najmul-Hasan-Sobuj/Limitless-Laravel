@@ -38,7 +38,7 @@
                     <li class="{{ request()->is('admin') ? 'active' : '' }}"><a href="{{ route('admin') }}"><i
                                 class="icon-home4"></i>
                             <span>Dashboard</span></a></li>
-                    <li class="{{ request()->is('student.index') ? 'active' : '' }}">
+                    <li class="{{ request()->is('student/index') ? 'active' : '' }}">
                         <a href="{{ route('student.index') }}"><i class="icon-users"></i>
                             <span>Students</span>
                         </a>

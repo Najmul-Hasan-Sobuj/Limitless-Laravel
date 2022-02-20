@@ -13,14 +13,14 @@
                 </ul>
             </div>
         </div>
-        <table id="studentTable" class="table table-togglable datatable-basic table-bordered table-striped table-hover">
+        <table id="studentTable" class="table table-togglable table-bordered table-striped table-hover">
             <thead>
                 <tr>
                     <th data-toggle="true">SL</th>
                     <th data-hide="phone">ID</th>
                     <th data-hide="phone,tablet">Name</th>
                     <th data-hide="phone,tablet">Email</th>
-                    <th data-hide="phone,tablet">Photo</th>
+                    <th data-hide="phone,,tablet">Photo</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -32,8 +32,7 @@
                             <td>{{ $item->roll }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
-                            <td><img style="height:100px;width: 100px;" src="{{ asset('uploads/' . $item->image) }}"
-                                    alt="">
+                            <td><img style="height:80px;width: 80px;" src="{{ asset('uploads/' . $item->image) }}" alt="">
                             </td>
                             <td class="text-center">
                                 <ul class="icons-list">
