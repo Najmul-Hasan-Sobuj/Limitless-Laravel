@@ -31,14 +31,13 @@
         <div class="sidebar-category sidebar-category-visible">
             <div class="category-content no-padding">
                 <ul class="navigation navigation-main navigation-accordion">
-
                     <!-- Main -->
                     <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i>
                     </li>
                     <li class="{{ request()->is('admin') ? 'active' : '' }}"><a href="{{ route('admin') }}"><i
                                 class="icon-home4"></i>
                             <span>Dashboard</span></a></li>
-                    <li class="{{ request()->is('student/index') ? 'active' : '' }}">
+                    <li class="{{ request()->is('student') ? 'active' : '' }}">
                         <a href="{{ route('student.index') }}"><i class="icon-users"></i>
                             <span>Students</span>
                         </a>

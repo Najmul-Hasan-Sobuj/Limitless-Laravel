@@ -107,7 +107,6 @@
 
     </div>
     <!-- /page container -->
-
     <!-- Core JS files -->
     <script type="text/javascript" src="{{ asset('assets/js/plugins/loaders/pace.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/core/libraries/jquery.min.js') }}"></script>
@@ -152,10 +151,11 @@
 
     <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/datatables_basic.js') }}"></script>
-    {{-- this is not workable --}}
 
+    {{-- this is not workable --}}
     {{-- <script type="text/javascript" src="{{ asset('assets/js/pages/table_elements.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/styling/switchery.min.js') }}"></script> --}}
+    <script type="text/javascript" src="{{ asset('assets/js/custom.js') }}"></script>
 
 
 
