@@ -14,14 +14,22 @@ use App\Http\Controllers\Admin\StudentsController;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('admin');
-});
-Route::get('/admin', function () {
-    return view('admin.layout.app');
-})->name('admin');
+Auth::routes();
 
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 // admin routes list start
-Route::resource('student', StudentsController::class);
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/admin', function () {
+        return view('admin.layout.app');
+    })->name('admin');
+    Route::resource('student', StudentsController::class);
+});
+
+// auth
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 // admin routes list end
